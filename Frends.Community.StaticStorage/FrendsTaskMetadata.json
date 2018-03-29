@@ -1,0 +1,22 @@
+﻿{
+  "Tasks": [
+    {
+      "TaskMethod": "Frends.Community.StaticStorage.Task.Add"
+    },
+    {
+      "TaskMethod": "Frends.Community.StaticStorage.Task.Get"
+    },
+    {
+      "TaskMethod": "Frends.Community.StaticStorage.Task.Remove"
+    },
+    {
+      "TaskMethod": "Frends.Community.StaticStorage.Task.Clear"
+    },
+    {
+      "TaskMethod": "Frends.Community.StaticStorage.Task.ContainsKey"
+    },
+    {
+      "TaskMethod": "Frends.Community.StaticStorage.Task.ToJToken"
+    }
+  ]
+}
