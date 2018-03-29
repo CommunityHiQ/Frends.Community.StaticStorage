@@ -26,27 +26,34 @@ Adds or updates a key-value-pair in/to the storage
 |-----------|--------|-------------------------------------|-------------------------------------------|
 | key       | string | Storage key to identify value       | `myKey` 
 | value     | object | Object to add to as value           | `new { ts = DateTime.Now, desc = "something cool" }`
-| overwrite | boolean| true = will overwrite existing value, false = will try to add key-value-pair as new |
+| overwrite | boolean| true = will overwrite existing value, false = will try to add key-value-pair as new | 
 
 ### Get
+
 Gets keys value from storage
-| Property  | Type   | Description                   | Example                                   |
-|-----------|--------|-------------------------------|-------------------------------------------|
-| key       | string | Key of the value to get       | `myKey` 
+
+| Property  | Type   | Description                   | Example |
+|-----------|--------|-------------------------------|---------|
+| key       | string | Key of the value to get       | `myKey` |
 
 ### Remove
+
 Removes key-value-pair from storage
-| Property  | Type   | Description                | Example                                   |
-|-----------|--------|----------------------------|-------------------------------------------|
+
+| Property  | Type   | Description                | Example      |
+|-----------|--------|----------------------------|--------------|
 | key       | string | Storage key to remove      | `myKey` 
 
 ### Clear
+
 Clears all key-value-pairs from storage
 
 ### ContainsKey
+
 Checks if given key exists in storage
-| Property  | Type   | Description              | Example                                   |
-|-----------|--------|--------------------------|-------------------------------------------|
+
+| Property  | Type   | Description              | Example       |
+|-----------|--------|--------------------------|---------------|
 | key       | string | Storage key to check     | `myKey` 
 
 ### ToJToken
