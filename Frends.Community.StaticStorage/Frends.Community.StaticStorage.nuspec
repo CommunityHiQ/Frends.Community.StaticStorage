@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>Frends.Community.StaticStorage</id>
+    <version>1.0.0</version>
+    <title>Frends Community Static Storage</title>
+    <authors>HiQ Finland</authors>
     <projectUrl>https://github.com/CommunityHiQ/Frends.Community.StaticStorage</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>Key-value storage for storing values between process runs.</description>
     <copyright>Copyright 2018</copyright>
     <tags>Storage</tags>
     <dependencies>
