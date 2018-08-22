@@ -1,5 +1,5 @@
 # Frends.Community.StaticStorage
-Key-value storage for storing values between process runs
+Key-value storage for storing values between process runs. Data is sored in RAM i.e. stored data is not preserved if process is updated, deployed to new environment, or if FRENDS agent is rebooted.
 
 ## Building
 
