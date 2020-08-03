@@ -21,8 +21,8 @@ https://www.myget.org/F/frends-community/api/v3/index.json and in Gallery view i
 ## Add
 Adds or updates a key-value-pair in/to the storage
 ### Input 
-| Property  | Type   | Description                         | Example                                   |
-|-----------|--------|-------------------------------------|-------------------------------------------|
+| Property  | Type   | Description                         | Example                                  |
+|-----------|--------|-------------------------------------|------------------------------------------|
 | key       | string | Storage key to identify value       | `myKey` 
 | value     | object | Object to add to as value           | `new { ts = DateTime.Now, desc = "something cool" }`
 | overwrite | boolean| true = will overwrite existing value, false = will try to add key-value-pair as new | 
