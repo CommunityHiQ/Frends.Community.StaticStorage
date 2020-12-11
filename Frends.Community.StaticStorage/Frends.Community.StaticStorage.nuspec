@@ -22,8 +22,8 @@
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="bin\Release\Frends.Community.StaticStorage.dll" target="lib\net452\Frends.Community.StaticStorage.dll" />
-    <file src="bin\Release\Frends.Community.StaticStorage.xml" target="lib\net452\Frends.Community.StaticStorage.xml" />
+    <file src="bin\Release\Frends.Community.StaticStorage.dll" target="lib\net471\Frends.Community.StaticStorage.dll" />
+    <file src="bin\Release\Frends.Community.StaticStorage.xml" target="lib\net471\Frends.Community.StaticStorage.xml" />
     <file src="FrendsTaskMetadata.json" target="FrendsTaskMetadata.json" />
   </files>
 </package>
