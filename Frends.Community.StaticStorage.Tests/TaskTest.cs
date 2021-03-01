@@ -1,58 +1,82 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using System;
 
 namespace Frends.Community.StaticStorage.Tests
 {
-    [TestClass]
+
+    [TestFixture]
     public class TaskTest
     {
-        [TestInitialize]
+        [SetUp]
         public void Initialize()
         {
-            Task._storage.Clear();
+            Task.Clear();
         }
 
-        [TestMethod]
+        [Test]
+        public void Clear_ShouldWork()
+        {
+            Task.Add("key", 123, false);
+            Assert.IsTrue(Task.ContainsKey("key"));
+            Task.Clear();
+            Assert.IsFalse(Task.ContainsKey("key"));
+        }
+
+        [Test]
         public void Add_ShouldAddKeyValuePair()
         {
             Task.Add("key", 123, false);
 
-            Assert.IsTrue(Task._storage.ContainsKey("key"));
-            Assert.IsTrue(Task._storage.ContainsValue(123));
+            Assert.IsTrue(Task.ContainsKey("key"));
+            Assert.AreEqual(Task.Get("key"),123);
         }
 
-        [TestMethod]
+        [Test]
         public void Add_ShouldOverwriteValue()
         {
             Task.Add("key", 123, false);
-            Task.Add("key", 12345, true);
+            Task.Add("key", "12345", true);
 
-            Assert.AreEqual(12345, Task._storage["key"]);
+            Assert.AreEqual("12345", Task.Get("key"));
         }
 
-        [TestMethod]
-        public void Exists_ShouldReturnFalseIfKeyDoesNotExist()
+        [Test]
+        public void Add_ShouldFailToOverwriteValue()
         {
             Task.Add("key", 123, false);
+            Assert.Throws<ArgumentException>(() => Task.Add("key", 12345, false));
+        }
 
+        [Test]
+        public void Exists_ShouldReturnFalseIfKeyDoesNotExist()
+        {
             Assert.IsFalse(Task.ContainsKey("keyThatDoesNotExist"));
         }
 
-        [TestMethod]
+        [Test]
         public void Exists_ShouldReturnTrueIfKeyExists()
         {
             Task.Add("key", 123, false);
-
             Assert.IsTrue(Task.ContainsKey("key"));
         }
 
-        [TestMethod]
+        [Test]
+        public void Remove_ShouldWork()
+        {
+            Task.Add("key", 123, false);
+            Assert.IsTrue(Task.ContainsKey("key"));
+            Assert.IsTrue(Task.Remove("key"));
+            Assert.IsFalse(Task.ContainsKey("key"));
+            Assert.IsTrue(Task.Remove("key"));
+
+        }
+
+        [Test]
         public void ToJToken_ShouldReturnDictionaryAsJToken()
         {
             Task.Add("key", 123, false);
             JToken reference = JToken.Parse(@"{""key"":123 }");
-
             JToken result = (JToken)Task.ToJToken();
 
             Assert.AreEqual(reference.ToString(), result.ToString());

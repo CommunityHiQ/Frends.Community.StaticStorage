@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Frends.Community.StaticStorage.Tests")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace Frends.Community.StaticStorage
 {
     public class Task
